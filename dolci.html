@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>5IB Pizzeria - Menu Dolci</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #FFF3E0;
+      color: #6D4C41;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #D84315;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(216,67,21,0.4);
+      user-select: none;
+    }
+    header h1 {
+      font-weight: 600;
+      font-size: 2.2rem;
+      letter-spacing: 4px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+      margin-bottom: 0.3rem;
+    }
+    header p {
+      font-weight: 300;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-style: italic;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+    main.menu {
+      max-width: 1200px;
+      margin: 3rem auto 5rem;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    h2.section-title {
+      grid-column: 1 / -1;
+      color: #D84315;
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      user-select: none;
+    }
+    .pizza-card {
+      background: #FFFFFF;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(109,76,65,0.12);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .pizza-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(109,76,65,0.18);
+    }
+    .pizza-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: filter 0.3s ease;
+      filter: brightness(0.9);
+    }
+    .pizza-card:hover .pizza-img {
+      filter: brightness(1);
+    }
+    .pizza-content {
+      padding: 1.5rem 2rem 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .pizza-title {
+      color: #D84315;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      user-select: none;
+    }
+    .pizza-desc {
+      font-size: 1rem;
+      color: #6D4C41;
+      margin-bottom: 1.2rem;
+      line-height: 1.4;
+      user-select: none;
+    }
+    .price {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #4E342E;
+      text-align: right;
+      user-select: none;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #4E342E;
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      user-select: none;
+      margin-top: auto;
+    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+      }
+      main.menu {
+        grid-template-columns: 1fr;
+        margin: 2rem auto 4rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>5IB - Dolci</h1>
+    <p>Dolci fatti in casa, per un finale perfetto</p>
+  </header>
+
+  <main class="menu">
+
+    <h2 class="section-title">Dolci Artigianali</h2>
+
+    <div class="pizza-card">
+      <img class="pizza-img" src="dolci/tiramisu.png" alt="Tiramisù" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Tiramisù</h2>
+        <p class="pizza-desc">Mascarpone, savoiardi, caffè e cacao amaro</p>
+        <p class="price">€4.50</p>
+      </div>
+    </div>
+
+    <div class="pizza-card">
+      <img class="pizza-img" src="dolci/delizialimone.png" alt="Delizia al Limone" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Delizia al Limone</h2>
+        <p class="pizza-desc">Pan di spagna ripieno di crema al limone e glassa profumata</p>
+        <p class="price">€5.00</p>
+      </div>
+    </div>
+
+    <div class="pizza-card">
+      <img class="pizza-img" src="dolci/babarum.png" alt="Babà al Rum" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Babà al Rum</h2>
+        <p class="pizza-desc">Dolce napoletano imbevuto di rum, morbido e aromatico</p>
+        <p class="price">€4.00</p>
+      </div>
+    </div>
+
+    <div class="pizza-card">
+      <img class="pizza-img" src="dolci/caprese.png" alt="Torta Caprese" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Torta Caprese</h2>
+        <p class="pizza-desc">Torta al cioccolato e mandorle, senza farina</p>
+        <p class="price">€4.80</p>
+      </div>
+    </div>
+
+    <div class="pizza-card">
+      <img class="pizza-img" src="dolci/cannoli.png" alt="Cannoli Siciliani" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Cannoli Siciliani</h2>
+        <p class="pizza-desc">Cialda croccante ripiena di ricotta dolce, cioccolato e pistacchio</p>
+        <p class="price">€4.90</p>
+      </div>
+    </div>
+
+    <div class="pizza-card">
+      <img class="pizza-img" src="dolci/profit.png" alt="Profiteroles" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Profiteroles</h2>
+        <p class="pizza-desc">Bignè farciti con crema chantilly e copertura al cioccolato fondente</p>
+        <p class="price">€5.50</p>
+      </div>
+    </div>
+
+    <div class="pizza-card">
+      <img class="pizza-img" src="dolci/cheesecake.png" alt="Cheesecake ai Frutti di Bosco" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Cheesecake ai Frutti di Bosco</h2>
+        <p class="pizza-desc">Base croccante, crema al formaggio e coulis di frutti di bosco</p>
+        <p class="price">€5.20</p>
+      </div>
+    </div>
+      
+    <div class="pizza-card">
+        <img class="pizza-img" src="dolci/pannacotta.png" alt="Panna Cotta alla Vaniglia" />
+        <div class="pizza-content">
+          <h2 class="pizza-title">Panna Cotta alla Vaniglia</h2>
+          <p class="pizza-desc">Delicato dessert al cucchiaio con vaniglia naturale e topping ai frutti rossi</p>
+          <p class="price">€4.80</p>
+        </div>
+    </div>
+      
+    <div class="pizza-card">
+        <img class="pizza-img" src="dolci/sbriciolata.png" alt="Sbriciolata alla Nutella" />
+        <div class="pizza-content">
+          <h2 class="pizza-title">Sbriciolata alla Nutella</h2>
+          <p class="pizza-desc">Frolla croccante sbriciolata con cuore cremoso di Nutella</p>
+          <p class="price">€5.00</p>
+        </div>
+    </div>
+      
+
+  </main>
+
+  <footer>
+    &copy; 2025 5IB - Pizzeria (Parisi, Illiano, Lorido, di Costanzo)
+  </footer>
+
+</body>
+</html>
