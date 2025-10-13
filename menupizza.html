@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Pizzeria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --rosso: #c62828;
+      --verde: #388e3c;
+      --crema: #fdf6ee;
+      --scuro: #1e1e1e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--crema);
+      color: var(--scuro);
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--rosso), var(--verde));
+      color: white;
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .menu {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .pizza-card {
+      background-color: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 1px solid #f0e5da;
+    }
+
+    .pizza-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .pizza-card h2 {
+      color: var(--rosso);
+      margin-bottom: 0.3rem;
+      font-size: 1.4rem;
+    }
+
+    .pizza-card p {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .price {
+      font-weight: bold;
+      color: var(--verde);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: var(--scuro);
+      color: white;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍕 La Bella Pizza</h1>
+    <p>Pizza artigianale, fatta con amore dal 1987</p>
+  </header>
+
+  <main class="menu">
+    <div class="pizza-card">
+      <h2>Margherita</h2>
+      <p>Pomodoro San Marzano, mozzarella fior di latte, basilico</p>
+      <p class="price">€6.50</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Diavola</h2>
+      <p>Pomodoro, mozzarella, salame piccante calabrese</p>
+      <p class="price">€7.50</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Quattro Formaggi</h2>
+      <p>Mozzarella, gorgonzola, fontina, parmigiano</p>
+      <p class="price">€8.00</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Capricciosa</h2>
+      <p>Pomodoro, mozzarella, funghi, carciofi, prosciutto cotto, olive</p>
+      <p class="price">€8.50</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Vegetariana</h2>
+      <p>Pomodoro, mozzarella, zucchine, melanzane, peperoni</p>
+      <p class="price">€7.50</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Bufalina</h2>
+      <p>Pomodoro, mozzarella di bufala DOP, basilico fresco</p>
+      <p class="price">€9.00</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Tonno e Cipolla</h2>
+      <p>Pomodoro, mozzarella, tonno, cipolla rossa</p>
+      <p class="price">€7.80</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Prosciutto e Funghi</h2>
+      <p>Pomodoro, mozzarella, prosciutto cotto, champignon</p>
+      <p class="price">€8.20</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Napoli</h2>
+      <p>Pomodoro, mozzarella, acciughe, capperi, origano</p>
+      <p class="price">€7.70</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Pizza Bianca</h2>
+      <p>Mozzarella, patate al forno, rosmarino, olio EVO</p>
+      <p class="price">€8.00</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Pizza Tartufata</h2>
+      <p>Crema di tartufo, mozzarella, funghi porcini</p>
+      <p class="price">€10.00</p>
+    </div>
+
+    <div class="pizza-card">
+      <h2>Pizza Pugliese</h2>
+      <p>Pomodoro, mozzarella, burrata, pomodorini, rucola</p>
+      <p class="price">€9.50</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 La Bella Pizza — Via Roma 123, Napoli • Tel. 081 1234567</p>
+  </footer>
+
+</body>
+</html>
