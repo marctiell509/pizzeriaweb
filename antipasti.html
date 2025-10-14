@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>🍕 5IB Pizzeria 5IB - Menu Pizze</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #E1F5FE;
+    color: #D84315;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background: #D84315;
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(216,67,21,0.4);
+    user-select: none;
+  }
+  header h1 {
+    font-weight: 600;
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+    margin-bottom: 0.3rem;
+  }
+  header p {
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  }
+  main.menu {
+    max-width: 1200px;
+    margin: 3rem auto 5rem;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2.5rem;
+  }
+  h2.section-title {
+    grid-column: 1 / -1;
+    color: #D84315;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    user-select: none;
+  }
+  .pizza-card {
+    background: #FFFFFF;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(216,67,21,0.12);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .pizza-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(216,67,21,0.18);
+  }
+  .pizza-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+    filter: brightness(0.9);
+  }
+  .pizza-card:hover .pizza-img {
+    filter: brightness(1);
+  }
+  .pizza-content {
+    padding: 1.5rem 2rem 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pizza-title {
+    color: #D84315;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+    user-select: none;
+  }
+  .pizza-desc {
+    font-size: 1rem;
+    color: #D84315;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+    user-select: none;
+  }
+  .price {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #D84315;
+    text-align: right;
+    user-select: none;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #D84315;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    user-select: none;
+    margin-top: auto;
+  }
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+    }
+    main.menu {
+      grid-template-columns: 1fr;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>5IB - Antipasti</h1>
+  <p>Antipasti freschi e gustosi per iniziare al meglio</p>
+</header>
+
+
+<main class="menu">
+
+    <h2 class="section-title">Antipasti di Mare</h2>
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/cozzemarinara.png" alt="Cozze alla Marinara" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Cozze alla Marinara</h2>
+        <p class="pizza-desc">Cozze fresche cucinate con pomodoro, aglio e prezzemolo</p>
+        <p class="price">€9.00</p>
+      </div>
+    </div>
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/insalatapolpo.png" alt="Insalata di Polpo" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Insalata di Polpo</h2>
+        <p class="pizza-desc">Polpo lesso con patate, olive e prezzemolo</p>
+        <p class="price">€11.00</p>
+      </div>
+    </div>
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/gamberettilimone.png" alt="Gamberetti al Limone" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Gamberetti al Limone</h2>
+        <p class="pizza-desc">Gamberetti saltati con succo di limone e prezzemolo</p>
+        <p class="price">€10.50</p>
+      </div>
+    </div>
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/calamarifritti.png" alt="Calamari Fritti" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Calamari Fritti</h2>
+        <p class="pizza-desc">Calamari croccanti serviti con salsa tartara</p>
+        <p class="price">€12.00</p>
+      </div>
+    </div>
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/soutevongole.png" alt="Sauté di Vongole" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Sauté di Vongole</h2>
+        <p class="pizza-desc">Vongole saltate con aglio, olio e prezzemolo</p>
+        <p class="price">€10.00</p>
+      </div>
+    </div>
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/tartaretonno.png" alt="Tartare di Tonno" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Tartare di Tonno</h2>
+        <p class="pizza-desc">Tonno fresco tagliato a cubetti con avocado e lime</p>
+        <p class="price">€13.00</p>
+      </div>
+    </div>
+  
+  
+    <h2 class="section-title">Antipasti di Terra</h2>
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/bruschette.png" alt="Bruschette al Pomodoro" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Bruschette al Pomodoro</h2>
+        <p class="pizza-desc">Pane tostato con pomodoro fresco, aglio e basilico</p>
+        <p class="price">€5.00</p>
+      </div>
+    </div>
+  
+    <div class="pizza-card">
+        <img class="pizza-img" src="antipasti/capraccio.png" alt="Carpaccio di Manzo" />
+        <div class="pizza-content">
+          <h2 class="pizza-title">Carpaccio di Manzo</h2>
+          <p class="pizza-desc">Fette sottili di manzo con rucola, scaglie di parmigiano e olio extravergine</p>
+          <p class="price">€10.50</p>
+        </div>
+      </div>      
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/parmigiana.png" alt="Parmigiana di Melanzane" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Parmigiana di Melanzane</h2>
+        <p class="pizza-desc">Melanzane grigliate con pomodoro e parmigiano</p>
+        <p class="price">€8.00</p>
+      </div>
+    </div>
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/salumimisti.png" alt="Salumi Misti" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Salumi Misti</h2>
+        <p class="pizza-desc">Selezione di salumi artigianali con pane casereccio</p>
+        <p class="price">€9.50</p>
+      </div>
+    </div>
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/frittatine.png" alt="Frittatine di Pasta" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Frittatine di Pasta</h2>
+        <p class="pizza-desc">Piccole frittate croccanti di pasta con formaggio</p>
+        <p class="price">€6.00</p>
+      </div>
+    </div>
+  
+    <div class="pizza-card">
+      <img class="pizza-img" src="antipasti/mozzarella.png" alt="Mozzarella in Carrozza" />
+      <div class="pizza-content">
+        <h2 class="pizza-title">Mozzarella in Carrozza</h2>
+        <p class="pizza-desc">Mozzarella fritta con pane impanato e salsa al pomodoro</p>
+        <p class="price">€7.00</p>
+      </div>
+    </div>
+  
+  </main>
+  
+
+<footer>
+  &copy; 2025 5IB - Pizzeria (Parisi, Illiano, Lorido, Finelli, di Costanzo)
+</footer>
+
+</body>
+</html>
