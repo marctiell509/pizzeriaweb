@@ -140,7 +140,6 @@ nav a:hover::after { width: 100%; }
   text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
 
-/* Logo */
 .banner-logo {
   margin: 20px 0;
 }
@@ -151,6 +150,24 @@ nav a:hover::after { width: 100%; }
   border: 3px solid var(--rosso);
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   object-fit: cover;
+}
+
+/* CTA */
+.cta {
+  display: inline-block;
+  background: linear-gradient(45deg, var(--rosso), var(--giallo));
+  color: var(--bianco);
+  padding: 14px 30px;
+  border-radius: 40px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3);
 }
 
 /* Pulsanti Menu e Dolci */
@@ -173,6 +190,65 @@ nav a:hover::after { width: 100%; }
 .banner-buttons a:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+}
+
+/* Overlay */
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(2px);
+  z-index: 99;
+}
+
+/* Modulo prenotazione */
+#booking-form {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: var(--bianco);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#booking-form.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#booking-form input,
+#booking-form select,
+#booking-form textarea,
+#booking-form button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+#booking-form button {
+  background: linear-gradient(45deg, var(--rosso), var(--giallo));
+  color: var(--bianco);
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+#booking-form button:hover {
+  transform: scale(1.05);
 }
 
 /* 🔻 Sezione Dove Siamo 🔻 */
@@ -200,6 +276,8 @@ nav a:hover::after { width: 100%; }
 }
 
 #dove-siamo .descrizione-sede {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 50px auto;
@@ -227,7 +305,6 @@ nav a:hover::after { width: 100%; }
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* Contatti e Orari */
 .info-sede {
   display: flex;
   flex-wrap: wrap;
@@ -304,6 +381,7 @@ footer a {
   </nav>
 </header>
 
+<!-- 🔹 Banner -->
 <section class="banner" id="banner">
   <div class="banner-bg">
     <img src="immagini/Gemini_Generated_Image_ktweekktweekktwe.png" alt="Pizza Moderna">
@@ -317,7 +395,10 @@ footer a {
       <img src="immagini/b8b02cf1-151e-4f4b-8db1-35e91688b920.png" alt="Logo PizzeriaWeb">
     </div>
 
-    <!-- Pulsanti per Menu e Dolci -->
+    <!-- Bottone Prenota -->
+    <span class="cta" onclick="toggleBooking()">Prenota il tuo tavolo</span>
+
+    <!-- Pulsanti Menu e Dolci -->
     <div class="banner-buttons">
       <a href="menu.html">Menu</a>
       <a href="dolci.html">Dolci</a>
@@ -325,6 +406,35 @@ footer a {
   </div>
 </section>
 
+<!-- Overlay -->
+<div id="overlay" onclick="toggleBooking()"></div>
+
+<!-- Modulo Prenotazione -->
+<section id="booking-form">
+  <h2>Prenota il tuo Tavolo</h2>
+  <form>
+    <input type="text" name="nome" placeholder="Nome e Cognome" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="telefono" placeholder="Telefono" required>
+    <input type="date" name="data" required>
+    <input type="time" name="ora" required>
+    <select name="persone" required>
+      <option value="">Numero di persone</option>
+      <option value="1">1 persona</option>
+      <option value="2">2 persone</option>
+      <option value="3">3 persone</option>
+      <option value="4">4 persone</option>
+      <option value="5">5 persone</option>
+      <option value="6">6 persone</option>
+      <option value="7">7 persone</option>
+      <option value="8">8 persone</option>
+    </select>
+    <textarea name="note" placeholder="Note (opzionale)"></textarea>
+    <button type="submit">Prenota Ora</button>
+  </form>
+</section>
+
+<!-- 🔻 Dove Siamo -->
 <section id="dove-siamo">
   <h2>📍 Dove Siamo</h2>
   <p class="descrizione-sede">
@@ -364,8 +474,18 @@ footer a {
   <p>© 2025 <strong>PizzeriaWeb</strong> — Tutti i diritti riservati</p>
 </footer>
 
+<script>
+function toggleBooking() {
+  const form = document.getElementById('booking-form');
+  const overlay = document.getElementById('overlay');
+  const isVisible = form.classList.toggle('show');
+  overlay.style.display = isVisible ? 'block' : 'none';
+}
+</script>
+
 </body>
 </html>
+
 
 
 
